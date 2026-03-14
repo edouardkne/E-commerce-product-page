@@ -14,9 +14,8 @@
 </head>
 
 <body>
+
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
-
-
     <header class="header">
         <div class="header-container">
             <div class="header-left">
@@ -157,6 +156,36 @@
             </div>
         </section>
     </main>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">
+                <img src="images/icon-close.svg" alt="Close">
+            </button>
+            <button class="lightbox-prev" aria-label="Previous image">
+                <img src="images/icon-previous.svg" alt="Previous">
+            </button>
+            <img src="images/image-product-1.jpg" alt="Product image" class="lightbox-main-image"
+                id="lightboxMainImage">
+            <button class="lightbox-next" aria-label="Next image">
+                <img src="images/icon-next.svg" alt="Next">
+            </button>
+            <div class="lightbox-thumbnails">
+                <div class="lightbox-thumbnail active" data-image="images/image-product-1.jpg">
+                    <img src="images/image-product-1-thumbnail.jpg" alt="Thumbnail 1">
+                </div>
+                <div class="lightbox-thumbnail" data-image="images/image-product-2.jpg">
+                    <img src="images/image-product-2-thumbnail.jpg" alt="Thumbnail 2">
+                </div>
+                <div class="lightbox-thumbnail" data-image="images/image-product-3.jpg">
+                    <img src="images/image-product-3-thumbnail.jpg" alt="Thumbnail 3">
+                </div>
+                <div class="lightbox-thumbnail" data-image="images/image-product-4.jpg">
+                    <img src="images/image-product-4-thumbnail.jpg" alt="Thumbnail 4">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script1.js"></script>
 </body>

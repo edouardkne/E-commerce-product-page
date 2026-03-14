@@ -33,6 +33,139 @@ function switchImage() {
     currentImageIndex = images.findIndex(img => img === newImageSrc);
 }
 
+// ===================================================== 
+// ISSUE 10: LIGHTBOX FUNCTIONALITY
+// Desktop image viewer with keyboard navigation
+// ===================================================== 
+const lightbox = document.getElementById('lightbox');
+const lightboxMainImage = document.getElementById('lightboxMainImage');
+const lightboxThumbnails = document.querySelectorAll('.lightbox-thumbnail');
+const lightboxClose = document.querySelector('.lightbox-close');
+const lightboxPrev = document.querySelector('.lightbox-prev');
+const lightboxNext = document.querySelector('.lightbox-next');
+
+let currentImageIndex = 0;
+const images = [
+    'images/image-product-1.jpg',
+    'images/image-product-2.jpg',
+    'images/image-product-3.jpg',
+    'images/image-product-4.jpg'
+];
+
+// Open lightbox
+mainImage.addEventListener('click', openLightbox);
+
+function openLightbox() {
+    updateLightboxImage();
+    updateLightboxThumbnails();
+    lightbox.style.display = 'flex';
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+}
+
+// Close lightbox
+lightboxClose.addEventListener('click', closeLightbox);
+
+function closeLightbox() {
+    lightbox.style.display = 'none';
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore scroll
+}
+
+// Close on outside click
+lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+        closeLightbox();
+    }
+});
+
+// Previous image
+lightboxPrev.addEventListener('click', prevImage);
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    updateLightboxImage();
+    updateLightboxThumbnails();
+}
+
+// Next image
+lightboxNext.addEventListener('click', nextImage);
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    updateLightboxImage();
+    updateLightboxThumbnails();
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+    if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') {
+            prevImage();
+        } else if (e.key === 'ArrowRight') {
+            nextImage();
+        }
+    }
+});
+
+// Thumbnail click in lightbox
+lightboxThumbnails.forEach((thumb, index) => {
+    thumb.addEventListener('click', function() {
+        currentImageIndex = index;
+        updateLightboxImage();
+        updateLightboxThumbnails();
+    });
+});
+
+function updateLightboxImage() {
+    lightboxMainImage.src = images[currentImageIndex];
+    lightboxMainImage.alt = `Product image ${currentImageIndex + 1}`;
+    
+    // Sync with main gallery
+    mainImage.src = images[currentImageIndex];
+    mainImage.alt = `Product image ${currentImageIndex + 1}`;
+    thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentImageIndex);
+    });
+}
+
+function updateLightboxThumbnails() {
+    lightboxThumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentImageIndex);
+    });
+}
+
+// Mobile gallery navigation
+const mobilePrev = document.getElementById('mobilePrev');
+const mobileNext = document.getElementById('mobileNext');
+
+if (mobilePrev && mobileNext) {
+    mobilePrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prevImage();
+        syncMainImage();
+    });
+    
+    mobileNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nextImage();
+        syncMainImage();
+    });
+}
+
+function syncMainImage() {
+    mainImage.src = images[currentImageIndex];
+    thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentImageIndex);
+    });
+}
 
 // ===================================================== 
 // ISSUE 6: QUANTITY SELECTOR
