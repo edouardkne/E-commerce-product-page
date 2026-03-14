@@ -552,3 +552,118 @@ body {
         height: 48px;
         font-size: 0.875rem;
     }
+
+
+    WN */
+    .cart-dropdown {
+        position: fixed;
+        width: calc(100% - 2rem);
+        max-width: 320px;
+        left: 1rem;
+        right: 1rem;
+        top: 76px;
+        z-index: 1000;
+    }
+
+    .cart-item {
+        gap: 0.75rem;
+    }
+
+    .cart-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .item-name {
+        font-size: 0.75rem;
+    }
+
+    .item-price {
+        font-size: 0.75rem;
+    }
+
+    .delete-btn img {
+        width: 10px;
+    }
+
+    .checkout-btn {
+        font-size: 0.875rem;
+        padding: 0.75rem 0;
+    }
+
+/* NOTIFICATIONS */
+
+.notification {
+    position: fixed;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-very-dark-blue);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    transition: bottom 0.3s ease;
+    font-weight: var(--font-weight-bold);
+    max-width: 90%;
+}
+
+.notification.show {
+    bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .notification {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        bottom: 1rem;
+        width: calc(100% - 2rem);
+        max-width: none;
+        left: 1rem;
+        right: 1rem;
+        transform: none;
+    }
+
+
+
+}
+
+/* NOTIFICATIONS */
+
+.notification {
+    position: fixed;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-very-dark-blue);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    transition: bottom 0.3s ease;
+    font-weight: var(--font-weight-bold);
+    max-width: 90%;
+}
+
+.notification.show {
+    bottom: 2rem;
+}
+
+
+
+/* Large desktop screens */
+@media (min-width: 1440px) {
+    .header-container {
+        padding: 0 3rem;
+    }
+
+    .container {
+        padding: 0 3rem;
+    }
+
+    .product-section {
+        gap: 3rem;
+    }
+}

@@ -1,4 +1,7 @@
-
+// ===================================================== 
+// ISSUE 4: PRODUCT IMAGE GALLERY
+// Main image gallery with thumbnail selection
+// =====================================================
 const mainImage = document.getElementById('mainImage');
 const thumbnails = document.querySelectorAll('.thumbnail');
 
@@ -31,9 +34,10 @@ function switchImage() {
 }
 
 
-
-
-
+// ===================================================== 
+// ISSUE 6: QUANTITY SELECTOR
+// + and - buttons to select product quantity
+// ===================================================== 
 const quantityDisplay = document.getElementById('quantityDisplay');
 const increaseBtn = document.getElementById('increaseBtn');
 const decreaseBtn = document.getElementById('decreaseBtn');
@@ -69,10 +73,11 @@ function updateQuantityDisplay() {
     quantityDisplay.textContent = quantity;
 }
 
-
-
-
-
+// ===================================================== 
+// ISSUE 7: ADD TO CART
+// ISSUE 8: CART MANAGEMENT & DROPDOWN
+// Functional cart with add/remove items and checkout
+// ===================================================== 
 const addToCartBtn = document.getElementById('addToCartBtn');
 const cartDropdown = document.getElementById('cartDropdown');
 const cartEmpty = document.querySelector('.cart-empty');
@@ -302,8 +307,10 @@ function showNotification(message) {
     }, 3000);
 }
 
-
-
+// ===================================================== 
+// ISSUE 3: HEADER & MOBILE NAVIGATION
+// Responsive header with hamburger menu for mobile
+// ===================================================== 
 const menuToggle = document.getElementById('menuToggle');
 const closeMenu = document.getElementById('closeMenu');
 const mobileNavOverlay = document.getElementById('mobileNavOverlay');
