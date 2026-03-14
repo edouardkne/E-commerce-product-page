@@ -90,7 +90,7 @@ let cart = [];
 const PRODUCT_ID = 1;
 const PRODUCT_NAME = 'Fall Limited Edition Sneakers';
 const PRODUCT_PRICE = 125.00;
-const PRODUCT_IMAGE = './images/image-product-1-thumbnail.jpg';
+const PRODUCT_IMAGE = 'images/image-product-1-thumbnail.jpg';
 
 // Add to cart
 addToCartBtn.addEventListener('click', addToCart);
@@ -176,7 +176,7 @@ function renderCartItems() {
                 </p>
             </div>
             <button class="delete-btn" aria-label="Remove item">
-                <img src="./images/icon-delete.svg" alt="Delete">
+                <img src="images/icon-delete.svg" alt="Delete">
             </button>
         `;
         
