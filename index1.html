@@ -12,7 +12,58 @@
     <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+                    <img src="./images/icon-menu.svg" alt="">
+                </button>
+                <div class="logo">
+                    <a href="/"><img src="./images/logo.svg" alt="Sneakers Logo"></a>
+                </div>
+                <nav class="desktop-nav" aria-label="Primary navigation">
+                    <ul>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-right">
+                <div class="cart-wrapper">
+                    <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+                        <img src="./images/icon-cart.svg" alt="Cart">
+                        <span class="cart-badge" id="cartBadge" aria-label="Number of items in cart">0</span>
+                    </button>
+                </div>
+                <div class="user-avatar">
+                    <button class="avatar-btn" aria-label="User profile">
+                        <img src="./images/image-avatar.png" alt="User avatar">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <div class="mobile-nav-drawer">
+            <button class="close-menu" id="closeMenu" aria-label="Close navigation menu">
+                <img src="./images/icon-close.svg" alt="">
+            </button>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
         <script src="script1.js"></script>
 </body>
 </html>
